@@ -32,8 +32,8 @@ public class PizzaController {
     }
 
     @Post
-    Mono<HttpStatus> save(@NonNull @NotNull @Valid Pizza fruit) {
-        return pizzaService.save(fruit)
+    Mono<HttpStatus> save(@NonNull @NotNull @Valid Pizza pizza) {
+        return pizzaService.save(pizza)
                 .map(added -> added ? CREATED : CONFLICT);
     }
 }
